@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="borderPane" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.unb.cs3035.project.EditTagController">
+   <center>
+      <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <Label text="Note" />
+            <TextArea fx:id="textArea" editable="false" prefHeight="200.0" prefWidth="200.0" />
+            <Separator prefWidth="200.0" />
+            <ListView fx:id="listView" orientation="HORIZONTAL" prefHeight="40.0" prefWidth="600.0" />
+            <HBox alignment="CENTER" prefHeight="48.0" prefWidth="600.0" spacing="10.0">
+               <children>
+                  <TextField fx:id="textField" promptText="new-tag" />
+                  <Button mnemonicParsing="false" onAction="#addTag" text="Add" />
+                  <Button mnemonicParsing="false" onAction="#removeTag" text="Delete selected" />
+               </children>
+            </HBox>
+            <Label fx:id="message" textFill="#c30202" />
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <Button mnemonicParsing="false" onAction="#completeEdit" text="Complete" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="20.0" />
+         </BorderPane.margin></Button>
+   </bottom>
+</BorderPane>

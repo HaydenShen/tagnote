@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.unb.cs3035.project.TagnoteController">
+   <top>
+      <AnchorPane prefHeight="28.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar layoutY="-1.0" prefHeight="28.0" prefWidth="442.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#addNote" text="New Note" />
+                      <MenuItem mnemonicParsing="false" onAction="#deleteNote" text="Delete Selected Note" />
+                      <MenuItem mnemonicParsing="false" onAction="#editTags" text="Edit Tags on Selected Note" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                      <MenuItem mnemonicParsing="false" onAction="#onHelpScreen" text="Help Screen" />
+                    <MenuItem mnemonicParsing="false" onAction="#onAbout" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <TextField fx:id="searchBar" layoutX="441.0" layoutY="1.0" onKeyTyped="#searchNotes" prefHeight="26.0" prefWidth="158.0" promptText="Search by title or tags" AnchorPane.leftAnchor="441.0" AnchorPane.rightAnchor="1.0" />
+         </children></AnchorPane>
+   </top>
+   <center>
+      <SplitPane dividerPositions="0.25" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <ListView fx:id="listView" prefHeight="371.0" prefWidth="175.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0" />
+               </children></AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                        <TextArea fx:id="textArea" onKeyTyped="#saveNote" prefHeight="331.0" prefWidth="430.0" wrapText="true" AnchorPane.bottomAnchor="31.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <ListView fx:id="tagListView" maxHeight="-Infinity" orientation="HORIZONTAL" prefHeight="30.0" prefWidth="415.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </center>
+</BorderPane>
